@@ -7,10 +7,7 @@ function getTodos() {
 }
 
 export default async function Home() {
-  await prisma.todo.deleteMany({
-    where: { title: 'test'}
-  })
-
+  
   
   const todos = await getTodos(); //instead of await prisma.todo.findMany() here
  
@@ -26,8 +23,7 @@ export default async function Home() {
       </header>
       <ul>
         {todos.map(todo => (
-          // <TodoItem key={todo.id} {...todo}/>
-          <TodoItem key={todo.id} id={todo.id} title={todo.title} complete={todo.complete}/>
+          <TodoItem key={todo.id} {...todo}/> // or <TodoItem key={todo.id} id={todo.id} title={todo.title} complete={todo.complete}/>
 ))}
       </ul>
     </>
