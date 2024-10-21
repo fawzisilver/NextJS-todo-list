@@ -1,3 +1,5 @@
+"use client"
+
 type TodoItemProps = {
     id: string,
     title: string,
