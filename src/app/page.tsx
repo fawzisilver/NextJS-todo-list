@@ -23,7 +23,7 @@ export default async function Home() {
       </header>
       <ul>
         {todos.map(todo => (
-          <TodoItem key={todo.id} {...todo}/> // or <TodoItem key={todo.id} id={todo.id} title={todo.title} complete={todo.complete}/>
+          <TodoItem key={todo.id} {...todo} toggleTodo={toggleTodo}/> // or <TodoItem key={todo.id} id={todo.id} title={todo.title} complete={todo.complete}/>
 ))}
       </ul>
     </>
